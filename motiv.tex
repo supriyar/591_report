@@ -79,7 +79,15 @@ of time. While a naive static analysis approach might immediately seem to be
 sufficient for our purpose, it is to be noted that by restricting the migration of a
 method based on its future invocation of a native method we would be forcing it to 
 run on the host end point which could result in a longer execution time to reach the 
-native method when compared to the same 
+native method. If the time to execute on server coupled with the sync time 
+would have been less than the time it took to reach the native method on the client 
+we would have erred in our decision to not migrate the method. 
+
+A second motivation for us began with the observation that upon returning to the client
+after an abort at native method on server, the client waits for a duration that is 
+atleast the recent sync time before it can attempt to offload again. While this 
+seems to be a reasonable strategy, it appeared the wait didn't take into account 
+that we returned to the client because of a native method abort.  
 
 %TODO: Talk about tcpmux and data transfer - needed because we have to talk about 
 % recovery mechanisms
