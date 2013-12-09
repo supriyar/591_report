@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 DEC 2013 23:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 DEC 2013 04:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,45 +950,135 @@ Package microtype Info: Loading generic settings for font family
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
 
-(./abstract.tex) (./intro.tex) (./motiv.tex) (./smart_offload.tex)
-(./method.tex
+(./abstract.tex) (./intro.tex
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 30.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+
+Underfull \hbox (badness 1571) in paragraph at lines 1--30
+\T1/ptm/m/n/10 (+20) where the net-work con-di-tions are good for of-fload-ing.
+
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 1--30
+\T1/ptm/m/n/10 (+20) multi-threaded com-pu-ta-tion and al-low threads to move
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--30
+
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 1--30
+\T1/ptm/m/n/10 (+20) Our pri-mary con-tri-bu-tions through this project are the
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--30
+
+ []
+
+) (./motiv.tex) [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pd
+ftex.map}
+
+
+] (./smart_offload.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-) (./result.tex) (./prior.tex) (./conclusion.tex) (./paper.bbl
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 24.
+<figs/parent_native.pdf, id=74, 311.1625pt x 259.97125pt>
+File: figs/parent_native.pdf Graphic file (type pdf)
 
+<use figs/parent_native.pdf>
+Package pdftex.def Info: figs/parent_native.pdf used on input line 26.
+(pdftex.def)             Requested size: 287.6119pt x 240.29697pt.
+
+Overfull \hbox (34.6669pt too wide) in paragraph at lines 26--27
+[][] 
+ []
+
+
+Overfull \hbox (21.03374pt too wide) in paragraph at lines 24--29
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+phv on input line 29.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.32993pt on input line 29.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `phv' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 29.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.32993pt on input line 29.
+
+<figs/native_native.pdf, id=76, 311.1625pt x 358.33875pt>
+File: figs/native_native.pdf Graphic file (type pdf)
+
+<use figs/native_native.pdf>
+Package pdftex.def Info: figs/native_native.pdf used on input line 52.
+(pdftex.def)             Requested size: 208.66296pt x 240.29697pt.
+
+Overfull \hbox (21.03374pt too wide) in paragraph at lines 50--55
+ [][] 
+ []
+
+) (./method.tex) (./result.tex) (./prior.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./figs/parent_native.pdf> <./figs/native_native.pdf>]) (./conclusion.tex)
+(./paper.bbl
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
- [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-
-]
+ [3]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
-
-(./paper.aux)
+ (./paper.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 0D5F283D3CAB53D7B1554280242FF4B4;1516.
+(rerunfilecheck)             Checksum: D4EA3BB8ABFD3BF22CABCD62ED931C3C;2110.
  ) 
 Here is how much of TeX's memory you used:
- 14493 strings out of 493315
- 212407 string characters out of 6137904
- 334238 words of memory out of 5000000
- 17675 multiletter control sequences out of 15000+600000
- 32958 words of font info for 65 fonts, out of 8000000 for 9000
+ 14840 strings out of 493315
+ 217041 string characters out of 6137904
+ 341511 words of memory out of 5000000
+ 17844 multiletter control sequences out of 15000+600000
+ 65756 words of font info for 202 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,9n,40p,767b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,40p,767b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on paper.pdf (1 page, 35151 bytes).
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on paper.pdf (3 pages, 116421 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 20569 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 44155 words of extra memory for PDF output out of 51595 (max. 10000000)
 

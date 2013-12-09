@@ -1,0 +1,20 @@
+Recent research has focussed on increasing the computational capabilities of mobile devices. By using code offloading
+resource intensive mobile components are identified and offloaded to remote servers in order to be executed
+by machines in the cloud. Most of the relevant work in this area have used code annotations and VM synchronization to
+implement the client to server offloading. The most noteworthy of these works are MAUI~\cite{maui} and CloneCloud~\cite{ccloud}.
+\newline
+CloneCloud follows an approach that is based on static analysis of the mobile application to partition it.
+Based on this partition, the application can be executed in the client or the server. CloneCloud maintains
+a clone of the mobile application stack in a virtual machine on the server. This helps is synchronization
+when the application is offloaded as the application can be executed at the client or the server seamlessly.
+The strategy proposed by MAUI is based on code annotations to determine the methods that can be offloaded to the
+cloud. The developer is given the responsibility of generating these annotations in the source code. The MAUI
+profiler identifies these annotations at run-time and offloads the methods to the server.
+\newline
+Intelligent offloading decisions has been investigated previously by Flores et.al. ~\cite{fuzzy}. Their approach
+generates offloading decisions based on server parameters. By using fuzzy-logic, they improve the offloading decision
+over time. This decision engine relies on both, mobile and cloud parameters. Though the ideology of this work is similar
+to our intention our approach differs in certain aspects. Our approach differs as we look
+at the execution times of methods, using dynamic profiling to determine when to migrate methods to the server and when
+to aviod the state transfer and execute locally.
+
