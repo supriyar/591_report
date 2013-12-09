@@ -1,0 +1,80 @@
+%\documentclass[pageno]{jpaper}
+\documentclass[conference]{IEEEtran}
+
+\usepackage[normalem]{ulem}
+
+\newcommand{\ignore}[1]{}
+
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+   \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+\title{Intelligent Mobile Code Offloading Decisions}
+
+
+\author{
+  Aluri, Ajit\\
+  \texttt{aaluri@umich.edu}
+  \and
+  Arora, Silky\\
+  \texttt{silkyar@umich.edu}
+  \and
+  Rao, Supriya\\
+  \texttt{supriyar@umich.edu}
+}
+
+\date{}
+\maketitle
+
+\thispagestyle{empty}
+%------------------------------%
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+%------------------------------%
+\section{Introduction}
+\input{intro}
+%------------------------------%
+%\section{Background and Motivation}
+%\label{sec:back}
+%\input{motiv}
+%%------------------------------%
+%\section{Evaluation}
+%\label{sec:results}
+%\input{result}
+%%------------------------------%
+%\section{Related Work}
+%\label{sec:prior}
+%\input{prior}
+%%------------------------------%
+%\section{Conclusion}
+%\label{sec:conclusion}
+%\input{conclusion}
+%%------------------------------%
+%\bstctlcite{bstctl:etal, bstctl:nodash, bstctl:simpurl}
+%\bibliographystyle{IEEEtranS}
+%%\bibliography{references}
+%\vspace{5mm}
+%\bibliography{offload}
+
+\end{document}
+

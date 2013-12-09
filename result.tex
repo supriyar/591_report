@@ -1,0 +1,69 @@
+
+
+\ignore{
+\subsection{Network Configurations Studied}
+
+We evaluate the network performance for four different
+switch allocation schemes - \textbf{Separable input-first (IF)}, \textbf{Wavefront
+(WF)}, \textbf{Augmented Path (AP)} and \textbf{VIX}. Unless otherwise
+stated, all VIX configurations have two virtual inputs per input
+port. All our experiments are performed
+for 64 node networks.
+ For each of these
+configurations, we study the average packet latency and average
+network throughput for each of the four switch allocation
+techniques. To study the allocation techniques independent of their
+implementation limitations, we assume equal cycle time for all switch
+allocation techniques. The packet latency is reported in $cycles$ and
+network throughput in $packets/cycle/node$ or $flits/cycle$.
+The routers have a 128 bit datapath width, and support 6 virtual
+channels per input port. We evaluate the different network configurations with uniform random
+  statistical traffic with a packet size of 512 bits (i.e.~4
+  flits).
+%-------------------------------------------------------%
+\begin{figure*} [tbf*]
+\centering
+\begin{tabular}{cc}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[height=0.2\textheight]{figs/mesh-thpt.pdf}
+\center
+\vspace{-4mm}
+(a)
+\end{minipage}
+&
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[height=0.2\textheight]{figs/mesh-lat.pdf}
+\center
+\vspace{-4mm}
+(b)
+\end{minipage}
+\end{tabular}
+\caption{Network throughput and packet latency for a mesh topology.}
+\label{fig:mesh}
+\end{figure*}
+%-------------------------------------------------------%
+
+%-------------------------------------------------------%
+\begin{figure*} [tbf*]
+\centering
+\begin{tabular}{cc}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[height=0.2\textheight]{figs/fbfly-thpt.pdf}
+\center
+\vspace{-4mm}
+(a)
+\end{minipage}
+&
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[height=0.2\textheight]{figs/fbfly-lat.pdf}
+\center
+\vspace{-4mm}
+(b)
+\end{minipage}
+\end{tabular}
+\caption{Network throughput and packet latency for a Flattened Butterfly topology.}
+\label{fig:fbfly}
+%\vspace{-2mm}
+\end{figure*}
+%-------------------------------------------------------%
+}
