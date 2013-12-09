@@ -1,0 +1,35 @@
+In COMET (Code Offlaod by Migrating Execution Transparently) \cite{comet} 
+the authors introduced a runtime system that allows migration of threads 
+between systems depending on their workload. COMET extended distributed 
+shared memory (DSM) techniques to enable offloading, a process in which
+a resource constrained device can execute compute intensive tasks on a 
+relatively high performance device. 
+
+The core idea behind COMET is to manage memory consistency across different
+points at a field 
+granularity using a VM Synchronization primitve. Changes to objects are 
+tracked at a field level by setting an addtional dirty bit to true if the 
+field was modified by an end point. The \textit{happens-before} ordering 
+between reads and writes of different threads helps in merging the changed 
+fields to achieve a consistent state. A VM synchronization primitive is used 
+to transfer the states of virtual heaps, stacks, source code (dex files) and 
+synthetic classes to the other end point. 
+
+
+A VM sync is usually initiated when a thread requests for ownership of 
+an object it doesn't own or when the thread can be migrated to the other 
+end point for execution. The thread that initiated the sync starts 
+collecting all the fields that have been changed since last sync. Once the 
+dirtied fields have been obtained, the stacks that have to be synced are 
+gathered and all the state changes are then transmitted over to the other 
+end point. During changed state collection all threads are temporarily suspended
+and are resumed just before the data transfer is initiated. To avoid exchanging
+the code that the other end point has to resume from, all the source code files are 
+transferred only on the first syncronization. The current program counter value 
+gives the next instruction the other end point begins execution from. To support 
+locking primitives, COMET assigns an owner to each lock (through a flag) 
+indicating the end point that currently owns the object. When a thread 
+encounters an object it doesn't own, an ownership transfer request is 
+initiated to acquire the object, which could result in a VM synchronization. 
+
+
