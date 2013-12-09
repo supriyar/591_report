@@ -1,16 +1,37 @@
-
-
-
-%Processors with 10s of cores~\cite{amdopteron, azulvega3, cavimoctnet,
-%intelxeon, TILE-Gx100} are already available commercially.  A
-%packet-based on-chip network  with a regular topology is  an
-%attractive solution for connecting these large number of cores and the
-%associated on-chip structures, as they are scalable with predictable
-%electrical properties~\cite{route-packets}. An efficient on-chip
-%network design could have a significant impact on a many-core
-%processor's performance and power consumption.
-
-
+Offloading mobile applications to the cloud helps to bridge the gap between the computing capabilities
+of mobile devices and server machines. With the advance of ubiquitous computing many low-powered computing
+devices can benefit from the high processing powers of available server machines. The elastic computational
+cloud fuctionality helps in augmenting the processing speeds on demand and also leads to power efficient execution
+of applications.
+\newline
+Mobile code offloading may involve analyzing the mobile application statically and partitioning it to identify the
+most computationally expensive operations. These operations can be run on a remote server when the client is well
+connected to the server. Theoritically, offloading is advisable in scenarios where the network conditions are good
+for offloading. Moreover, the mobile application should preferably have high amounts of computational processing
+which can execute much faster remotely. A good offloading engine should also take into account the amount of data that
+needs to be transfered to the server. Based on the current network conditions and the size of migration data, the offloading
+engine should make its decision. Thus a good offloading mechanism should take into account various network and application
+parameters depending on the approach used to implement offloading. Our main goal in this project is to improve this offloading
+decision for an already existing offloading infrastructure.
+\newline
+The backbone for our offloading decision is the COMET ~\cite{comet} infrastructure. COMET has built its offloading engine
+on the Dalvik Virtual Machine. COMET uses Distributed Shared Memory (DSM) to implement offloading. It can be used to offload
+any android application in general as the application need to contain any offloading logic. By using a DSM based approach, the
+offloading mechanism can support multi-threaded computation and allow threads to move between the client and the server.
+The current scheduling algorithm in COMET is based on a simple heuristic and can be improved. Moreover, COMET aborts the
+execution at the server when a native method is encountered. In an application with plenty of native calls, continuous abortion
+at the server might lead to performance loss as time is wasted in the data transfer and sync between client and server.
+To address these limitations, we use static analysis to devise heuristics that determine when methods should be offloaded.
+\newline
+\newline
+Our primary contributions through this project are the following
+\newline
+\begin{itemize}
+   \item We perform static analysis of applications to identify native methods and their parent methods
+   \item We compare the data transfer during sync operations to the current network bandwidth to make offloading decision
+   \item Based on method execution times, we implement two offloading heuristics that identify the methods which can be marked
+   as safe or unsafe for migration
+\end{itemize}
 
 %-------------------------------------------------------%
 %\begin{figure} [thf*]
