@@ -1,4 +1,6 @@
 
+\subsection{Method Execution Times}
+\subsection{Heuristics Performance}
 
 \ignore{
 \subsection{Network Configurations Studied}
@@ -9,17 +11,6 @@ switch allocation schemes - \textbf{Separable input-first (IF)}, \textbf{Wavefro
 stated, all VIX configurations have two virtual inputs per input
 port. All our experiments are performed
 for 64 node networks.
- For each of these
-configurations, we study the average packet latency and average
-network throughput for each of the four switch allocation
-techniques. To study the allocation techniques independent of their
-implementation limitations, we assume equal cycle time for all switch
-allocation techniques. The packet latency is reported in $cycles$ and
-network throughput in $packets/cycle/node$ or $flits/cycle$.
-The routers have a 128 bit datapath width, and support 6 virtual
-channels per input port. We evaluate the different network configurations with uniform random
-  statistical traffic with a packet size of 512 bits (i.e.~4
-  flits).
 %-------------------------------------------------------%
 \begin{figure*} [tbf*]
 \centering
