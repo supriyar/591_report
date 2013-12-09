@@ -3,7 +3,7 @@ of mobile devices and server machines. With the advance of ubiquitous computing 
 devices can benefit from the high processing powers of available server machines. The elastic computational
 cloud fuctionality helps in augmenting the processing speeds on demand and also leads to power efficient execution
 of applications.
-\newline
+
 Mobile code offloading may involve analyzing the mobile application statically and partitioning it to identify the
 most computationally expensive operations. These operations can be run on a remote server when the client is well
 connected to the server. Theoritically, offloading is advisable in scenarios where the network conditions are good
@@ -13,7 +13,7 @@ needs to be transfered to the server. Based on the current network conditions an
 engine should make its decision. Thus a good offloading mechanism should take into account various network and application
 parameters depending on the approach used to implement offloading. Our main goal in this project is to improve this offloading
 decision for an already existing offloading infrastructure.
-\newline
+
 The backbone for our offloading decision is the COMET ~\cite{comet} infrastructure. COMET has built its offloading engine
 on the Dalvik Virtual Machine. COMET uses Distributed Shared Memory (DSM) to implement offloading. It can be used to offload
 any android application in general as the application need to contain any offloading logic. By using a DSM based approach, the
@@ -25,14 +25,17 @@ To address these limitations, we use static analysis to devise heuristics that d
 \newline
 \newline
 Our primary contributions through this project are the following
-\newline
 \begin{itemize}
    \item We perform static analysis of applications to identify native methods and their parent methods
    \item We compare the data transfer during sync operations to the current network bandwidth to make offloading decision
    \item Based on method execution times, we implement two offloading heuristics that identify the methods which can be marked
    as safe or unsafe for migration
 \end{itemize}
-
+\vspace{2mm}
+The remainder of this report is organized as follows: Section 2 presents the Background of COMET and Motivation for our work.
+Section 3 explains our offloading heuristics. Section 4 describes the methodology used to conduct experiments. Section 5 presents
+analysis and results of the applications studied. Section 6 addresses the related work and Section 7 presents our conclusion with
+future work.
 %-------------------------------------------------------%
 %\begin{figure} [thf*]
 %\centering

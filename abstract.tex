@@ -1,0 +1,12 @@
+Mobile code offloading strategies are arising as a prominent domain as it improves the performance of
+applications by perfoming most of the computation in the could. While this strategy is feasible for most
+applications, there are many important factors that need to be considered before offloading applications
+to a remote host. In this report, we propose certain enchancements to the scheduling mechanisms of COMET,
+a DSM based offloading infrastructure. COMET mainly focuses on how to offload rather than what to offload.
+Offloading decisions are an important factor as it varies based on network parameters and the execution
+profiles of applications.
+
+Our scheduling heuristics use static and dynamic profiling to determine scheduling decisions around native
+methods. In addition, we also factor in the current network bandwidth to disable offloading when the network
+conditions are poor. We evaluate our proposed heuristics on select android applications and compare the
+performance with the COMET baseline offloading heuristic.

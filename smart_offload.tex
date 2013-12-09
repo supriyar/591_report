@@ -9,7 +9,7 @@ approximately 200 native methods. In addition to these methods, the application 
 that cannot run on the server. The current offload infrastructure will abort execution at the server and invoke a sync
 call to send the state back to the client. This process of sending state from client to server and receiving state on
 aborting at native call can be very expensive, especially with limited network bandwidth.
-\newline
+
 We address this issue by profiling the application by obtaining the execution time betweeen the each parent method and its
 first native method invocation. If this execution time is very small as compared to the time required to send the data during
 a sync operation, then it would be unadvisable to perform a sync at the parent method and send the state to the server. By marking the parent as
@@ -23,7 +23,7 @@ time difference with the last sync time (or get the sync time based on current b
 \centering
 \begin{tabular}{c}
 \begin{minipage}[b]{0.5\textwidth}
-\includegraphics[height=0.95\textwidth]{figs/parent_native.pdf}
+\includegraphics[width=0.95\textwidth]{figs/parent_native.pdf}
 \end{minipage}
 \end{tabular}
 \caption{Call Graph with Parent and Native method having non-native execution time $t2-t1$}
@@ -35,7 +35,7 @@ The offloading strategy that COMET currently implements is a simple one. It look
 the Sync Time to calculate a threshold. The offloading is enabled if this threshold is less than the time elapsed since the last
 time an abort was invoked at the server. This strategy might not exploit the offloading capabilities to the fullest as it waits for
 some time before deciding to migrate to the server.
-\newline
+
 Our analysis on applications revealed that certain applications have a huge chunk of non-native execution code that is computationally
 intensive after a native function call. Even a simple application that invokes a System.print periodically and has a lot of intense
 computation between these calls will get affected to some extent by this mechanism. Our static analysis also reveals that significant
@@ -49,7 +49,7 @@ mentioned is shown in Figure~\ref{fig:native_native}.
 \centering
 \begin{tabular}{c}
 \begin{minipage}[b]{0.5\textwidth}
-\includegraphics[height=0.95\textwidth]{figs/native_native.pdf}
+\includegraphics[width=0.95\textwidth]{figs/native_native.pdf}
 \end{minipage}
 \end{tabular}
 \caption{Call Graph with non-native execution time $t3-t2$}
@@ -58,3 +58,8 @@ mentioned is shown in Figure~\ref{fig:native_native}.
 %-------------------------------------------------------%
 
 \subsection{Bandwidth Check}
+COMET relies on good netowrk conditions to ensure that the synchronization operations between client and server occur with less overhead.
+The synchronization accounts for a significant portion of execution time as the size of data being transferred is ever increasing. Keeping
+this in mind, evaluating the current network conditions is integral to the execution of the offloading mechanism. Once the size of data that
+needs to be sent to the server is determined, we compare it with the current network bandwidth. The client gets the network bandwidth values by
+periodically sending queries to iperf running on the server.

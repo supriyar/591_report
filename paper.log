@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 DEC 2013 04:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  9 DEC 2013 04:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1004,12 +1004,7 @@ File: figs/parent_native.pdf Graphic file (type pdf)
 
 <use figs/parent_native.pdf>
 Package pdftex.def Info: figs/parent_native.pdf used on input line 26.
-(pdftex.def)             Requested size: 287.6119pt x 240.29697pt.
-
-Overfull \hbox (34.6669pt too wide) in paragraph at lines 26--27
-[][] 
- []
-
+(pdftex.def)             Requested size: 240.29697pt x 200.76556pt.
 
 Overfull \hbox (21.03374pt too wide) in paragraph at lines 24--29
  [][] 
@@ -1035,17 +1030,18 @@ File: figs/native_native.pdf Graphic file (type pdf)
 
 <use figs/native_native.pdf>
 Package pdftex.def Info: figs/native_native.pdf used on input line 52.
-(pdftex.def)             Requested size: 208.66296pt x 240.29697pt.
+(pdftex.def)             Requested size: 240.29697pt x 276.73093pt.
 
 Overfull \hbox (21.03374pt too wide) in paragraph at lines 50--55
  [][] 
  []
 
-) (./method.tex) (./result.tex) (./prior.tex
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./figs/parent_native.pdf> <./figs/native_native.pdf>]) (./conclusion.tex)
-(./paper.bbl
+ [2 <./figs/parent_native.pdf> <./figs/native_native.pdf>] (./method.tex) (./re
+sult.tex)
+(./prior.tex) (./conclusion.tex) (./paper.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
@@ -1063,7 +1059,7 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 Here is how much of TeX's memory you used:
  14840 strings out of 493315
  217041 string characters out of 6137904
- 341511 words of memory out of 5000000
+ 340511 words of memory out of 5000000
  17844 multiletter control sequences out of 15000+600000
  65756 words of font info for 202 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1075,7 +1071,7 @@ xlive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/20
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on paper.pdf (3 pages, 116421 bytes).
+Output written on paper.pdf (3 pages, 116964 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  141 compressed objects within 2 object streams
