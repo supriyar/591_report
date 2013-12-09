@@ -37,12 +37,14 @@ time an abort was invoked at the server. This strategy might not exploit the off
 some time before deciding to migrate to the server.
 
 Our analysis on applications revealed that certain applications have a huge chunk of non-native execution code that is computationally
-intensive after a native function call. Even a simple application that invokes a System.print periodically and has a lot of intense
-computation between these calls will get affected to some extent by this mechanism. Our static analysis also reveals that significant
+intensive after a native function call. Even a simple application that invokes the client-side display periodically and has a lot of intense
+computation between these native calls will get affected to some extent by this mechanism. Our static analysis also reveals that significant
 amount of time is spent in non-native execution between two native calls. In such a scenario, we offload immediately after the first
 native method returns to the client. With the profiling results, we can isolate the computationally intensive portions of code that
 are of interest to us and set a flag to inform the scheduler to perform migration without waiting to cross a threshold. The scenario
-mentioned is shown in Figure~\ref{fig:native_native}.
+mentioned is shown in Figure~\ref{fig:native_native}. In this figure the time difference $t3-t2$ is of interest to us as it denotes the amount
+of non-native execution that can execute on the server. If the profiling results suggest that this time difference is significant, then we
+inform the COMET scheduler to migrate to the server after executing the Native method Na locally.
 
 %-------------------------------------------------------%
 \begin{figure} [thf*]
