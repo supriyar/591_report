@@ -69,8 +69,9 @@ available bandwidth and the network congestion. We also concluded that since
 last sync time implicitly captures the latency, it was indeed acceptable to
 calculate the threshold after a certain interval, based on only the recent sync time.
 
-We began our project with the motivation to further reduce the synchronizations
-between the two end points. It is clear that migrating a method that calls a
+Our main goal in this project is to further improve the scheduling
+between the two end points by performing compiler based analysis of applications.
+It is clear that migrating a method that calls a
 native method in the future would only result in an abort at the other end point
 and then a transfer back to the original end point. With the aid of static analysis
 we wanted to predict if a method would call a native method in a fixed future interval
