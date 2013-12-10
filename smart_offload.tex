@@ -33,6 +33,21 @@ Figure~\ref{fig:wala} shows this time difference for some of the applications we
 \label{fig:parent_native}
 \end{figure}
 %-------------------------------------------------------%
+
+
+%-------------------------------------------------------%
+\begin{figure} [thf*]
+\centering
+\begin{tabular}{c}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[width=0.95\textwidth]{figs/ddms_parent_native.pdf}
+\end{minipage}
+\end{tabular}
+\caption{Execution time difference (in microseconds) between parent and first naitve method for different applications}
+\label{fig:ddms_native}
+\end{figure}
+%-------------------------------------------------------%
+
 \subsection{Native-to-NextNative Execution Time}
 The offloading strategy that COMET currently implements is a simple one. It looks at the value of the Round Trip Time (RTT) and
 the Sync Time to calculate a threshold. The offloading is enabled if this threshold is less than the time elapsed since the last

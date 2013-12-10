@@ -31,9 +31,15 @@ To extract relevant information from the DDMS log file, we used the output gener
 parent methods' execution time. The log file and the WALA ouput were fed to a python script that printed the execution times of all the
 necessary methods. Another script was used to find the Parent-to-Native execution time.
 
+
+
+
 \subsection{Bandwidth Limitation}
 As stated in Section~\ref{sec:back} we wanted to include the bandwidth in our scheduling decision making logic. To make the current bandwidth conditions avaialble to the device, we ran a daemon similar in nature to the \texttt{tcpmux} daemon used in COMET. The \texttt{tcpmux} daemon helps in communication between the client and server and also in providing the latest RTT values to the decision engine. When the decision engine is invoked for the first time, the engine connects to the \texttt{tcpmux} daemon running locally using \texttt{connect} and gets the latest RTT value. This RTT value is obtained only once during the lifetime of the thread. We implemented a similar daemon that would provide for the latest bandwidth conditions. The bandwidth daemon internally ran the \texttt{iperf} tool to estimate the bandwidth. The daemon was configured to recalculate the bandwidth periodically after every 10 seconds.
 
 To limit the bandwidth available to the device, we explored two options - \texttt{dummynet} and \texttt{tc}. Owing to certain kernel module incompatabilities with \texttt{dummynet}, we used \texttt{tc} to limit the bandwidth for our experiments. \texttt{tc} is not available immediately in production devices and we had to rebuild the kernel to provide support for \texttt{tc}. After tc was eanbled in the kernel, we used the Hierarchical Token Bucket (HTB) queuing discipline to limit both the upload and download bandwidth. We used a shell script to dynamically change the bandwidth over different executions of the application.
 
-Studying the code, we observed that the data to be transferred is collected much after a decision has been made to migrate it. Thus, the data size to be transferred is available just before a \texttt{write} call to the socket. We implemented our decision logic at this stage in the application's execution. We query the bandwidth daemon to get the latest avaialble bandwidth. Next, we compare the size of data to be transferred to a threshold derived from the latest bandwidth and then take a final decision whether to offload the thread or not. The different threshold mecha that we used are discussed in Section~\ref{sec:smart_code} and the results are presented in Section~\ref{sec:results}
+Studying the code, we observed that the data to be transferred is collected much after a decision has been made to migrate it. Thus, the data size to be transferred is available just before a \texttt{write} call to the socket. We implemented our decision logic at this stage in the application's execution. We query the bandwidth daemon to get the latest avaialble bandwidth. Next, we compare the size of data to be transferred to a threshold derived from the latest bandwidth and then take a final decision whether to offload the thread or not.
+
+The results of incorporating the network bandwidth are presented in Section~\ref{sec:results}. Adding this check did not lead to any performance improvement
+over the baseline heuristic used in COMET.
