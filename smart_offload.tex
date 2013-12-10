@@ -18,6 +18,11 @@ Figure~\ref{fig:parent_native} shows an example of a parent method Pa and its na
 denotes the start of the native method Na. The time duration $t2-t1$ includes the non-native execution code. We can compare this
 time difference with the last sync time (or get the sync time based on current bandwidth and data transfer size)
 
+Based on the static profiling results, we identified that this time differnce is a small value for most applications.
+Figure~\ref{fig:ddms_native} shows this time difference for some of the applications we tested. For these applications
+most of the methods have a small amount of non-native code between the first native method invocation as seen in the
+graph
+
 %-------------------------------------------------------%
 \begin{figure} [thf*]
 \centering
@@ -30,6 +35,21 @@ time difference with the last sync time (or get the sync time based on current b
 \label{fig:parent_native}
 \end{figure}
 %-------------------------------------------------------%
+
+
+%-------------------------------------------------------%
+\begin{figure} [thf*]
+\centering
+\begin{tabular}{c}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[width=0.95\textwidth]{figs/ddms_parent_native.pdf}
+\end{minipage}
+\end{tabular}
+\caption{Execution time difference (in microseconds) between parent and first naitve method for different applications}
+\label{fig:ddms_native}
+\end{figure}
+%-------------------------------------------------------%
+
 \subsection{Native-to-NextNative Execution Time}
 The offloading strategy that COMET currently implements is a simple one. It looks at the value of the Round Trip Time (RTT) and
 the Sync Time to calculate a threshold. The offloading is enabled if this threshold is less than the time elapsed since the last
@@ -60,4 +80,4 @@ inform the COMET scheduler to migrate to the server after executing the Native m
 %-------------------------------------------------------%
 
 \subsection{Bandwidth Check}
-COMET relies on good netowrk conditions to ensure that the synchronization operations between client and server occur with less overhead. Infact as detailed in Section \ref{motiv}, the scheduling decision is based on the time it took for the last synchronization which is affected to a certain extent by the available bandwidth. Studying the current implementation of COMET we noticed that though the last sync time is considered in decision making, the size of data to be transferred was not being considered. We wanted to better the decision making by migrating a thread only when the data size to be transferred was lesser than a threshold that was derived based on current bandwidth conditions. Our idea was that even though the latest sync time can be huge, if the time it takes to migrate the data is lesser than the time it takes to run on the client, it is better to migrate that thread at that point. We discuss the implementation and evaluation of our ideas in the respective sections. 
+COMET relies on good netowrk conditions to ensure that the synchronization operations between client and server occur with less overhead. Infact as detailed in Section \ref{motiv}, the scheduling decision is based on the time it took for the last synchronization which is affected to a certain extent by the available bandwidth. Studying the current implementation of COMET we noticed that though the last sync time is considered in decision making, the size of data to be transferred was not being considered. We wanted to better the decision making by migrating a thread only when the data size to be transferred was lesser than a threshold that was derived based on current bandwidth conditions. Our idea was that even though the latest sync time can be huge, if the time it takes to migrate the data is lesser than the time it takes to run on the client, it is better to migrate that thread at that point. We discuss the implementation and evaluation of our ideas in the respective sections.
