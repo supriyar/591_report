@@ -4,8 +4,7 @@ of android applications.
 
 \subsection{Parent-to-Native Execution Time}
 Currently, COMET identifies a set of native methods that can be offloaded. These methods are annotated manually
-and the run-time system determines if the current native method can be flagged as offloadable. This is done for
-approximately 200 native methods. In addition to these methods, the application has many other native function calls
+and the run-time system determines if the current native method can be flagged as offloadable. In addition to these methods, the application has many other native function calls
 that cannot run on the server. The current offload infrastructure will abort execution at the server and invoke a sync
 call to send the state back to the client. This process of sending state from client to server and receiving state on
 aborting at native call can be very expensive, especially with limited network bandwidth.
