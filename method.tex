@@ -2,7 +2,7 @@ In this section, we present the strategies and tools used to implement the heuri
 
 
 \subsection{Call-Graph Analysis}
-To profile the android application, we used the T.J Watson Libraries for Analysis (WALA) which provides static analysis
+To profile the android application, we used the T.J Watson Libraries for Analysis (WALA)~\cite{wala} which provides static analysis
 of Java bytecode. WALA provides an API to the developer using which the application can be analyzed and a Call Graph can be
 constructed. A call graph is a directed graph that can be used to identify relationships between method calls in a program.
 Call graphs can be constructed either statically or dynamically, we use a static approach for our analysis. A static
