@@ -20,7 +20,7 @@ time difference with the last sync time (or get the sync time based on current b
 Based on the static profiling results, we identified that this time differnce is a small value for most applications.
 Figure~\ref{fig:ddms_native} shows this time difference for some of the applications we tested. For these applications
 most of the methods have a small amount of non-native code between the first native method invocation as seen in the
-graph
+graph. This forms the baseline to our first heuristic where in we prevent offloading a thread which immediately aborts, and save the communication overhead.
 
 %-------------------------------------------------------%
 \begin{figure} [thf*]
