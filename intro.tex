@@ -18,7 +18,7 @@ Our main goal in this project is to improve this offloading decision for an alre
 The backbone for our offloading decision is the COMET (Code Offlaod by Migrating Execution Transparently)
 infrastructure. COMET has built its offloading engine
 on the Dalvik Virtual Machine. COMET uses Distributed Shared Memory (DSM) to implement offloading. It can be used to offload
-any android application in general as the application need to contain any offloading logic. By using a DSM based approach, the
+any android application in general as the application need not contain any offloading logic. By using a DSM based approach, the
 offloading mechanism can support multi-threaded computation and allow threads to move between the client and the server.
 The current scheduling algorithm in COMET is based on a simple heuristic and can be improved. Moreover, COMET aborts the
 execution at the server when a native method is encountered. In an application with plenty of native calls, continuous abortion
