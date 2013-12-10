@@ -10,11 +10,10 @@ Mobile code offloading may involve analyzing the mobile application statically a
 most computationally expensive operations. These operations can be run on a remote server when the client is well
 connected to the server. Theoretically, offloading is advisable in scenarios where the network conditions are good
 for offloading. Moreover, the mobile application should preferably have high amounts of computational processing
-which can execute much faster remotely. A good offloading engine should take into account the amount of data that
+which can execute much faster remotely. Therefore, a good offloading engine should take into account the amount of data that
 needs to be transfered to the server and compare it with the current network conditions to make decisions.
-By taking various network and application parameters into account we can ensure that the offloading capabilities of the
-client do not affect its perfomance adversely. Our main goal in this project is to improve this offloading
-decision for an already existing offloading infrastructure.
+This ensures that the offloading capabilities of the client do not affect its perfomance adversely. 
+Our main goal in this project is to improve this offloading decision for an already existing offloading infrastructure.
 
 The backbone for our offloading decision is the COMET (Code Offlaod by Migrating Execution Transparently)
 infrastructure. COMET has built its offloading engine

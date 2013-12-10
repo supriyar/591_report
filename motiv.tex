@@ -6,7 +6,7 @@ relatively high performance device.
 
 The core idea behind COMET is to manage memory consistency across different
 points at a field
-granularity using a VM Synchronization primitve. Changes to objects are
+granularity using a VM synchronization primitve. Changes to objects are
 tracked at a field level by setting an addtional dirty bit to true if the
 field was modified by an end point. The \textit{happens-before} ordering
 between reads and writes of different threads helps in merging the changed
@@ -33,7 +33,7 @@ is via such messages.
 
 To avoid exchanging
 the code that the other end point has to resume from, all the source code files are
-transferred only on the first syncronization. The current program counter value
+transferred only on the first synchronization. The current program counter value
 gives the next instruction the other end point begins execution from. To support
 locking primitives, COMET assigns an owner to each lock (through a flag)
 indicating the end point that currently owns the object. When a thread
@@ -54,19 +54,19 @@ factors - network conditions and time elapsed since the execution of the last
 native method. When a thread encounters instructions that are not to be migrated it
 updates the time it encountered the \textit{unsafe point}. Migration decisions are made (from our
 understanding of code) periodically. The scheduler decides to migrate a thread if
-its execution time since a last unsafe point is higher than a threshold
+its execution time since the last unsafe point is higher than the threshold
 derived from the network conditions. Network conditions include both bandwidth and the
-round trip time. For the first ten syncronizations, the threshold is a weighted
+round trip time. For the first ten synchronizations, the threshold is a weighted
 average between the RTT(+variance) and the recent synchronization time, after which
-the treshold solely depends on the average of the last 15 syncronization times.
+the threshold solely depends on the average of the last 15 syncronization times.
 
-From the implementation of COMET, we came to understand that the RTT is calcualted
+From the implementation of COMET, we came to understand that the RTT is calculated
 only at the beginning of an application's execution. We reasoned that it is infact
 correct to only estimate it once as the latency on evaluating it repeatedly for
 each scheduling decision would be atleast RTT. We observed that the last sync
 time (which is actually the average of the last 15 sync times) captures the
 available bandwidth and the network congestion. We also concluded that since
-last sync time implicitly captures the latency it was indeed acceptable to
+last sync time implicitly captures the latency, it was indeed acceptable to
 calculate the threshold after a certain interval, based on only the recent sync time.
 
 We began our project with the motivation to further reduce the synchronizations
