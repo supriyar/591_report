@@ -2,19 +2,22 @@ Offloading mobile applications to the cloud helps to bridge the gap between the 
 of mobile devices and server machines. With the advance of ubiquitous computing many low-powered computing
 devices can benefit from the high processing powers of available server machines. The elastic computational
 cloud fuctionality helps in augmenting the processing speeds on demand and also leads to power efficient execution
-of applications.
+of applications. A lot of research work ~\cite{netobj}, ~\cite{emerald}, ~\cite{tcl} has gone into designing systems where
+objects can seamlessly migrate between different end-points to exploit better resources. These systems create
+programming language constructs that help to facilitate offloading.
 
 Mobile code offloading may involve analyzing the mobile application statically and partitioning it to identify the
 most computationally expensive operations. These operations can be run on a remote server when the client is well
 connected to the server. Theoritically, offloading is advisable in scenarios where the network conditions are good
 for offloading. Moreover, the mobile application should preferably have high amounts of computational processing
-which can execute much faster remotely. A good offloading engine should also take into account the amount of data that
-needs to be transfered to the server. Based on the current network conditions and the size of migration data, the offloading
-engine should make its decision. Thus a good offloading mechanism should take into account various network and application
-parameters depending on the approach used to implement offloading. Our main goal in this project is to improve this offloading
+which can execute much faster remotely. A good offloading engine should take into account the amount of data that
+needs to be transfered to the server and compare it with the current network conditions to make decisions.
+By taking various network and application parameters into account we can ensure that the offloading capabilities of the
+client do not affect its perfomance adversely. Our main goal in this project is to improve this offloading
 decision for an already existing offloading infrastructure.
 
-The backbone for our offloading decision is the COMET ~\cite{comet} infrastructure. COMET has built its offloading engine
+The backbone for our offloading decision is the COMET (Code Offlaod by Migrating Execution Transparently)
+infrastructure. COMET has built its offloading engine
 on the Dalvik Virtual Machine. COMET uses Distributed Shared Memory (DSM) to implement offloading. It can be used to offload
 any android application in general as the application need to contain any offloading logic. By using a DSM based approach, the
 offloading mechanism can support multi-threaded computation and allow threads to move between the client and the server.
