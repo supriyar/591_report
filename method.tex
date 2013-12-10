@@ -32,8 +32,6 @@ parent methods' execution time. The log file and the WALA ouput were fed to a py
 necessary methods. Another script was used to find the Parent-to-Native execution time.
 
 
-
-
 \subsection{Bandwidth Limitation}
 As stated in Section~\ref{sec:back} we wanted to include the bandwidth in our scheduling decision making logic. To make the current bandwidth conditions avaialble to the device, we ran a daemon similar in nature to the \texttt{tcpmux} daemon used in COMET. The \texttt{tcpmux} daemon helps in communication between the client and server and also in providing the latest RTT values to the decision engine. When the decision engine is invoked for the first time, the engine connects to the \texttt{tcpmux} daemon running locally using \texttt{connect} and gets the latest RTT value. This RTT value is obtained only once during the lifetime of the thread. We implemented a similar daemon that would provide for the latest bandwidth conditions. The bandwidth daemon internally ran the \texttt{iperf} tool to estimate the bandwidth. The daemon was configured to recalculate the bandwidth periodically after every 10 seconds.
 
