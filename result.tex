@@ -23,6 +23,17 @@ of invoking the thread recovery mechanism is not the best way to implement this 
 unfamiliarity with the internals of the COMET code base, we were unable to come up with a more efficient solution.
 
 
+%-------------------------------------------------------%
+\begin{figure} [thf*]
+\centering
+\begin{tabular}{c}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[width=0.95\textwidth]{figs/h1_sweep.pdf}
+\end{minipage}
+\end{tabular}
+\caption{Execution results using the Parent-to-Native Heuristic for our synthetic application}
+\label{fig:h1_sweep}
+\end{figure}
 
 %-------------------------------------------------------%
 \begin{figure} [thf*]
@@ -47,12 +58,12 @@ unfamiliarity with the internals of the COMET code base, we were unable to come 
 & Scientific Application & Photoshop \\
 \hline
 \hline
-Parent-to-Native &  & 4.8\% \\ \hline
+Parent-to-Native & 4.08 & 4.58\% \\ \hline
 \hline
 Native-to-NextNative & 11\%  & -24\%  \\ \hline
  \end{tabular}
 \end{minipage}
-\caption{Relative improvement of different heuristics over Baseline COMET. }
+\caption{Relative improvement of different heuristics over Baseline COMET}
 \label{table:heuristic}
 \vspace{-6mm}
 }

@@ -31,8 +31,17 @@ To extract relevant information from the DDMS log file, we used the output gener
 parent methods' execution time. The log file and the WALA ouput were fed to a python script that printed the execution times of all the
 necessary methods. Another script was used to find the Parent-to-Native execution time.
 
-
-
+%-------------------------------------------------------%
+\begin{figure} [thf*]
+\centering
+\begin{tabular}{c}
+\begin{minipage}[b]{0.5\textwidth}
+\includegraphics[width=0.95\textwidth]{figs/native_total.pdf}
+\end{minipage}
+\end{tabular}
+\caption{Results from the Wala profiler with the proportion of native methods per application}
+\label{fig:native_total}
+\end{figure}
 
 \subsection{Bandwidth Limitation}
 As stated in Section~\ref{sec:back} we wanted to include the bandwidth in our scheduling decision making logic. To make the current bandwidth conditions avaialble to the device, we ran a daemon similar in nature to the \texttt{tcpmux} daemon used in COMET. The \texttt{tcpmux} daemon helps in communication between the client and server and also in providing the latest RTT values to the decision engine. When the decision engine is invoked for the first time, the engine connects to the \texttt{tcpmux} daemon running locally using \texttt{connect} and gets the latest RTT value. This RTT value is obtained only once during the lifetime of the thread. We implemented a similar daemon that would provide for the latest bandwidth conditions. The bandwidth daemon internally ran the \texttt{iperf} tool to estimate the bandwidth. The daemon was configured to recalculate the bandwidth periodically after every 10 seconds.

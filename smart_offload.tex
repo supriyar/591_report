@@ -19,7 +19,9 @@ denotes the start of the native method Na. The time duration $t2-t1$ includes th
 time difference with the last sync time (or get the sync time based on current bandwidth and data transfer size)
 
 Based on the static profiling results, we identified that this time differnce is a small value for most applications.
-Figure~\ref{fig:wala} shows this time difference for some of the applications we tested.
+Figure~\ref{fig:ddms_native} shows this time difference for some of the applications we tested. For these applications
+most of the methods have a small amount of non-native code between the first native method invocation as seen in the
+graph
 
 %-------------------------------------------------------%
 \begin{figure} [thf*]
