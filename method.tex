@@ -17,6 +17,11 @@ we wrote a profiler which identifies native methods and their corresponding pare
 This information is used for estimating the time difference between the Parent and next Native for calculation of the Parent-to-Native Execution
 Time heuristic.
 
+Figure ~/ref{fig:native_total} shows the percentage of native methods present in the benchmarks and the applications we used for our analysis.
+The percentage ranges from around 6% to 10%. We observed that this percentage doesn't drastically vary the performance of COMET since there
+are usually certain specific native method calls that force the offloaded thread on the server to abort and migrate it back to the client. For instance, nativeConfig
+and nativeSetPixels in the photoshop application, nativeConfig in fractal always made the thread execution abort on the server. Since these native methods set the unsafe point, sometimes COMET misses the opportunity to migrate non-native code while waiting to cross the threshold limit. Therefore, these methods helped us target the next non-native code with significant amount of computation for migration. 
+
 The information generate by the WALA profiler was coupled with a dynamic profiling technique to identify the methods of interest.
 We used the Dalvik Debugger Monitor Service (DDMS) tool to get the execution times of all the methods in the application. DDMS can perform
 thread level profiling by attaching to the process that we wish to debug. DDMS has information about all the processes running on the device
